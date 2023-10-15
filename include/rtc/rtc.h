@@ -357,6 +357,12 @@ RTC_C_EXPORT int rtcSetH265PacketizationHandler(int tr, const rtcPacketizationHa
 // Set AV1PacketizationHandler for track
 RTC_C_EXPORT int rtcSetAV1PacketizationHandler(int tr, const rtcPacketizationHandlerInit *init);
 
+// Set VP8PacketizationHandler for track
+RTC_C_EXPORT int rtcSetVP8PacketizationHandler(int tr, const rtcPacketizationHandlerInit *init);
+
+// Set VP9PacketizationHandler for track
+RTC_C_EXPORT int rtcSetVP9PacketizationHandler(int tr, const rtcPacketizationHandlerInit *init);
+
 // Set OpusPacketizationHandler for track
 RTC_C_EXPORT int rtcSetOpusPacketizationHandler(int tr, const rtcPacketizationHandlerInit *init);
 

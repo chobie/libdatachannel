@@ -86,6 +86,10 @@ set(LIBDATACHANNEL_SOURCES
 	${CMAKE_CURRENT_SOURCE_DIR}/src/h265packetizationhandler.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/src/av1rtppacketizer.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/src/av1packetizationhandler.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/src/vp8rtppacketizer.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/src/vp8packetizationhandler.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/src/vp9rtppacketizer.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/src/vp9packetizationhandler.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/src/mediachainablehandler.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/src/mediahandlerelement.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/src/mediahandlerrootelement.cpp
@@ -127,6 +131,10 @@ set(LIBDATACHANNEL_HEADERS
 	${CMAKE_CURRENT_SOURCE_DIR}/include/rtc/h265packetizationhandler.hpp
 	${CMAKE_CURRENT_SOURCE_DIR}/include/rtc/av1rtppacketizer.hpp
 	${CMAKE_CURRENT_SOURCE_DIR}/include/rtc/av1packetizationhandler.hpp
+	${CMAKE_CURRENT_SOURCE_DIR}/include/rtc/vp8rtppacketizer.hpp
+	${CMAKE_CURRENT_SOURCE_DIR}/include/rtc/vp8packetizationhandler.hpp
+	${CMAKE_CURRENT_SOURCE_DIR}/include/rtc/vp9rtppacketizer.hpp
+	${CMAKE_CURRENT_SOURCE_DIR}/include/rtc/vp9packetizationhandler.hpp
 	${CMAKE_CURRENT_SOURCE_DIR}/include/rtc/mediachainablehandler.hpp
 	${CMAKE_CURRENT_SOURCE_DIR}/include/rtc/mediahandlerelement.hpp
 	${CMAKE_CURRENT_SOURCE_DIR}/include/rtc/mediahandlerrootelement.hpp

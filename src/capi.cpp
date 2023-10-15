@@ -1284,6 +1284,48 @@ int rtcSetAV1PacketizationHandler(int tr, const rtcPacketizationHandlerInit *ini
 	});
 }
 
+int rtcSetVP8PacketizationHandler(int tr, const rtcPacketizationHandlerInit *init) {
+	return wrap([&] {
+		auto track = getTrack(tr);
+		// create RTP configuration
+		auto rtpConfig = createRtpPacketizationConfig(init);
+		// create packetizer
+		auto maxFragmentSize = init && init->maxFragmentSize ? init->maxFragmentSize
+		                                                     : RTC_DEFAULT_MAXIMUM_FRAGMENT_SIZE;
+		auto packetizer = std::make_shared<VP8RtpPacketizer>(
+		    rtpConfig, maxFragmentSize);
+		// create VP8 handler
+		auto vp8Handler = std::make_shared<VP8PacketizationHandler>(packetizer);
+		emplaceMediaChainableHandler(vp8Handler, tr);
+		emplaceRtpConfig(rtpConfig, tr);
+		// set handler
+		track->setMediaHandler(vp8Handler);
+		return RTC_ERR_SUCCESS;
+	});
+}
+
+
+int rtcSetVP9PacketizationHandler(int tr, const rtcPacketizationHandlerInit *init) {
+	return wrap([&] {
+		auto track = getTrack(tr);
+		// create RTP configuration
+		auto rtpConfig = createRtpPacketizationConfig(init);
+		// create packetizer
+		auto maxFragmentSize = init && init->maxFragmentSize ? init->maxFragmentSize
+		                                                     : RTC_DEFAULT_MAXIMUM_FRAGMENT_SIZE;
+		auto packetizer = std::make_shared<VP9RtpPacketizer>(
+		    rtpConfig, maxFragmentSize);
+		// create VP9 handler
+		auto vp9Handler = std::make_shared<VP9PacketizationHandler>(packetizer);
+		emplaceMediaChainableHandler(vp9Handler, tr);
+		emplaceRtpConfig(rtpConfig, tr);
+		// set handler
+		track->setMediaHandler(vp9Handler);
+		return RTC_ERR_SUCCESS;
+	});
+}
+
+
 int rtcSetOpusPacketizationHandler(int tr, const rtcPacketizationHandlerInit *init) {
 	return wrap([&] {
 		auto track = getTrack(tr);
