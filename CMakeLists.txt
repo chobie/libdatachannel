@@ -79,6 +79,7 @@ set(LIBDATACHANNEL_SOURCES
 	${CMAKE_CURRENT_SOURCE_DIR}/src/opuspacketizationhandler.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/src/aacrtppacketizer.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/src/h264rtppacketizer.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/src/userrtppacketizer.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/src/nalunit.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/src/h264packetizationhandler.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/src/h265rtppacketizer.cpp
@@ -86,6 +87,7 @@ set(LIBDATACHANNEL_SOURCES
 	${CMAKE_CURRENT_SOURCE_DIR}/src/h265packetizationhandler.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/src/av1rtppacketizer.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/src/av1packetizationhandler.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/src/userpacketizationhandler.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/src/mediachainablehandler.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/src/mediahandlerelement.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/src/mediahandlerrootelement.cpp
@@ -120,6 +122,7 @@ set(LIBDATACHANNEL_HEADERS
 	${CMAKE_CURRENT_SOURCE_DIR}/include/rtc/opuspacketizationhandler.hpp
 	${CMAKE_CURRENT_SOURCE_DIR}/include/rtc/aacrtppacketizer.hpp
 	${CMAKE_CURRENT_SOURCE_DIR}/include/rtc/h264rtppacketizer.hpp
+	${CMAKE_CURRENT_SOURCE_DIR}/include/rtc/userrtppacketizer.hpp
 	${CMAKE_CURRENT_SOURCE_DIR}/include/rtc/nalunit.hpp
 	${CMAKE_CURRENT_SOURCE_DIR}/include/rtc/h264packetizationhandler.hpp
 	${CMAKE_CURRENT_SOURCE_DIR}/include/rtc/h265rtppacketizer.hpp

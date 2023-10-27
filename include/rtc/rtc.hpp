@@ -39,5 +39,6 @@
 #include "h264packetizationhandler.hpp"
 #include "h265packetizationhandler.hpp"
 #include "opuspacketizationhandler.hpp"
+#include "userpacketizationhandler.hpp"
 
 #endif // RTC_ENABLE_MEDIA
