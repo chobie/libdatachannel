@@ -1200,6 +1200,20 @@ int rtcSetMediaInterceptorCallback(int pc, rtcInterceptorCallbackFunc cb) {
 	});
 }
 
+int rtcSetUserPacketizationHandler(int tr, rtcUserPacketizerCallbackFunc cb, const rtcPacketizationHandlerInit *init) {
+	return wrap([&] {
+		auto track = getTrack(tr);
+		// create RTP configuration
+		auto rtpConfig = createRtpPacketizationConfig(init);
+		emplaceRtpConfig(rtpConfig, tr);
+		// create packetizer
+		auto packetizer = std::make_shared<UserRtpPacketizer>(cb, rtpConfig);
+		track->setMediaHandler(packetizer);
+		return RTC_ERR_SUCCESS;
+	});
+}
+
+
 int rtcSetH264PacketizationHandler(int tr, const rtcPacketizationHandlerInit *init) {
 	return wrap([&] {
 		auto track = getTrack(tr);

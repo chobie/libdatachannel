@@ -139,6 +139,7 @@ typedef enum { RTC_TRANSPORT_POLICY_ALL = 0, RTC_TRANSPORT_POLICY_RELAY = 1 } rt
 #define RTC_ERR_TOO_SMALL -4 // buffer too small
 
 typedef void(RTC_API *rtcLogCallbackFunc)(rtcLogLevel level, const char *message);
+typedef int(RTC_API *rtcUserPacketizerCallbackFunc)(const char *message, int size, char **result, int* resultsize);
 typedef void(RTC_API *rtcDescriptionCallbackFunc)(int pc, const char *sdp, const char *type,
                                                   void *ptr);
 typedef void(RTC_API *rtcCandidateCallbackFunc)(int pc, const char *cand, const char *mid,
@@ -363,6 +364,8 @@ RTC_C_EXPORT int rtcSetOpusPacketizationHandler(int tr, const rtcPacketizationHa
 
 // Set AACPacketizationHandler for track
 RTC_C_EXPORT int rtcSetAACPacketizationHandler(int tr, const rtcPacketizationHandlerInit *init);
+
+RTC_C_EXPORT int rtcSetUserPacketizationHandler(int tr, rtcUserPacketizerCallbackFunc cb, const rtcPacketizationHandlerInit *init);
 
 // Chain RtcpSrReporter to handler chain for given track
 RTC_C_EXPORT int rtcChainRtcpSrReporter(int tr);

@@ -33,6 +33,7 @@
 #include "h265rtppacketizer.hpp"
 #include "mediahandler.hpp"
 #include "plihandler.hpp"
+#include "userrtppacketizer.hpp"
 #include "rtcpnackresponder.hpp"
 #include "rtcpreceivingsession.hpp"
 #include "rtcpsrreporter.hpp"
